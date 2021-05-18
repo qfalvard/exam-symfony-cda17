@@ -17,13 +17,12 @@ La durée prévue est d'environ 4h. Des points peuvent être perdus pour le reta
 
 Liste des exercices :
 
-1. Contrôleurs et routes (1)
-2. Vues avec Twig (2)
-3. Doctrine et la base de données (3)
-4. Formulaires et entités (4)
-5. Créer et utiliser des services (4)
-6. Débugguer un code existant (4)
-7. Questions de cours (2)
+1. Contrôleurs et routes
+2. Vues avec Twig
+3. Doctrine et la base de données
+4. Formulaires et entités
+5. Créer et utiliser des services
+6. Débugguer un code existant
 
 ## 1. Contrôleurs et routes
 
