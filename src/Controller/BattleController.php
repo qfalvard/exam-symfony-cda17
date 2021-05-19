@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Character;
 use App\Repository\CharacterRepository;
+use App\Services\ActionResolver;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -13,8 +14,22 @@ use Symfony\Component\Routing\Annotation\Route;
  */
 class BattleController extends AbstractController
 {
+    private $actionResolver;
+
+    /**
+     * BattleController constructor.
+     * @param $actionResolver
+     */
+    public function __construct(ActionResolver $actionResolver)
+    {
+        $this->actionResolver = $actionResolver;
+    }
+
+
     /**
      * @Route("/", name="battle_test")
+     * @param CharacterRepository $characterRepository
+     * @return Response
      * @throws \Exception
      */
     public function test(CharacterRepository $characterRepository): Response
@@ -58,7 +73,7 @@ class BattleController extends AbstractController
      */
     protected function runAttack(Character $attacker, Character $defender): array
     {
-        $damage = $actionResolver->attack($attacker, $defender);
+        $damage = $this->actionResolver->attack($attacker, $defender);
         if ($damage > 0) {
             $defender->getHit($damage);
         }

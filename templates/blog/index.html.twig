@@ -1,7 +1,5 @@
 {% extends 'layout.html.twig' %}
 
-{% block title %}Hello BlogController!{% endblock %}
-
     {% block header %}
         <h1>{{ 'LisTe des articLes' | capitalize }}</h1>
     {% endblock header %}
@@ -20,6 +18,7 @@
         </thead>
         <tbody>
         {% for post in posts %}
+            {% if post.published == true %}
         <tr>
             <td>{{ post.id }}</td>
             <td>
@@ -33,9 +32,12 @@
             </td>
             <td>{{ post.comments | length }}</td>
         </tr>
+            {% endif %}
         {% endfor %}
         </tbody>
     </table>
+
+    <a href="{{ path("blog_new") }}"><button>Ajouter un nouveau Post</button></a>
 
 {% endblock content %}
 

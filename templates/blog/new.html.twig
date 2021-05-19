@@ -1,0 +1,20 @@
+{% extends 'layout.html.twig' %}
+
+{% block header %}{% endblock %}
+
+{% block content %}
+
+    {{ form_start(form) }}
+    {{ form_row(form.title) }}
+    {{ form_row(form.content) }}
+    {{ form_row(form.published) }}
+    {{ form_row(form.tags) }}
+
+    <button type="submit" class="btn btn-primary">Valider</button>
+    {# On affiche la balise </form> et les éventuels champs qui n'aurait pas été affichés jusqu'ici #}
+    {{ form_end(form) }}
+
+{% endblock %}
+
+{% block footer %}{% endblock %}
+

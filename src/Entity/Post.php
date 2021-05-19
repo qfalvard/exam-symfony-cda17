@@ -6,6 +6,7 @@ use App\Repository\PostRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=PostRepository::class)
@@ -21,11 +22,14 @@ class Post
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank()
+     * @Assert\Length(min="10", max="200")
      */
     private $title;
 
     /**
      * @ORM\Column(type="text")
+     * @Assert\Length(min="200", max="2500")
      */
     private $content;
 
@@ -51,6 +55,7 @@ class Post
 
     /**
      * @ORM\ManyToMany(targetEntity=Tag::class, inversedBy="posts")
+     * @Assert\NotBlank()
      */
     private $tags;
 
