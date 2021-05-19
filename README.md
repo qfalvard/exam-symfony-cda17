@@ -2,7 +2,7 @@
 
 Pour travailler sur ce projet :
 
-- (Optionnel) Créer un fork du projet (sur la page [https://github.com/Dreeckan/exam-symfony](https://github.com/Dreeckan/exam-symfony), cliquer sur le bouton `fork`, en haut à droite de la page)
+- (Optionnel) Créer un fork du projet (sur la page [https://github.com/Dreeckan/exam-symfony-cda17](https://github.com/Dreeckan/exam-symfony-cda17), cliquer sur le bouton `fork`, en haut à droite de la page)
 - Cloner le projet (commande `git clone` par exemple)
 - Vérifier et adapter le contenu du fichier `.env` pour la configuration à la base de données
 - Lancer les commandes `composer install` et `php bin/console doctrine:database:create` dans le projet
